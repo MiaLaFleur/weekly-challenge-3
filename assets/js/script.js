@@ -14,8 +14,9 @@ var askSpecChar = confirm("Do you want to include special characters in your pas
 
 var numOfChars = prompt("how many characters do you want your password to have?");
 
+var passkey = "";
 
-  function generatePassword() {
+ var generatePassword = function() {
     var finalCharacterArray = [];
     
     if (askLowerCase) {
@@ -39,7 +40,6 @@ var numOfChars = prompt("how many characters do you want your password to have?"
     }
 
     return finalCharacterArray;
-  } 
 
   function init() {
     var arrayOfChars =
@@ -51,9 +51,11 @@ var numOfChars = prompt("how many characters do you want your password to have?"
     for (var i = 0; i < intNumOfChars; i++) {
       var randomIndex = math.floor(math.random() * arrayOfChars.length);
 
-      password = arrayOfChars[randomIndex];
+      passkey = passkey + arrayOfChars[randomIndex];
     }
   }
+}
+
 
 
 // Get references to the #generate element
